@@ -13,6 +13,34 @@
 // pineTree.style.bottom = '200px'
 // document.body.append(pineTree)
 
+//BONUS: Adding background before code below to make sure it stays behind (got help on this section)
+function repeatingImages(url, left, bottom, width, height) {
+  for (let h = 0; h < height; h++) {
+    for (let w = 0; w < width; w++) {
+      newImage(url, left + w * 100, bottom + h * 100);
+    }
+  }
+}
+
+let horizon = window.innerHeight * 0.6;
+let heightOfSky = window.innerHeight - horizon;
+let heightOfGrass = horizon;
+
+repeatingImages(
+  "assets/sky.png",
+  0,
+  horizon,
+  window.innerWidth / 100,
+  heightOfSky / 100
+);
+repeatingImages(
+  "assets/grass.png",
+  0,
+  0,
+  window.innerWidth / 100,
+  heightOfGrass / 100
+);
+
 //(Step 3) adding function to create create element based on editable parameters
 function newImage(url, left, bottom) {
   let object = document.createElement("img");
@@ -49,5 +77,3 @@ newItem("assets/sword.png", 500, 405);
 //(Step 6) Adding additonal items
 newItem("assets/shield.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
-
-//(Step 8) Trying to add background
