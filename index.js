@@ -21,7 +21,7 @@ function newImage(url, left, bottom) {
   object.style.left = left + "px";
   object.style.bottom = bottom + "px";
   document.body.append(object);
-  //return object;
+  return object;
 }
 
 //(Step 3 cont.) calling functions to put in greenCharacter and treeImage
@@ -37,7 +37,7 @@ newImage("assets/well.png", 500, 425);
 //(Step 5) creating function for object (sword) for character to pick up. Call newImage in newItem for object parameters
 function newItem(url, left, bottom) {
   let object = newImage(url, left, bottom);
-  //(Step 7) adding double click
+  //(Step 7) replacing click with double click
   object.addEventListener("dblclick", function () {
     object.remove();
   });
